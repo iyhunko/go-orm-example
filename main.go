@@ -6,6 +6,7 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
+	_ "github.com/jinzhu/gorm/dialects/sqlite"
 )
 
 func helloWorld(w http.ResponseWriter, r *http.Request) {
@@ -24,6 +25,8 @@ func handleRequests() {
 
 func main() {
 	fmt.Println("Go ORM Tutorial")
+
+	InitialMigration()
 
 	handleRequests()
 }
